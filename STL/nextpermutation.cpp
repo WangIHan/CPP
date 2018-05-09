@@ -5,7 +5,7 @@ using namespace std;
 
 
 int main(int argc, char **argv) {
-	/*int a[] = {1,1,2,3,4};
+	int a[] = {1,1,2,3,4};
 	int size  = sizeof(a) / sizeof(int);
 	
 	do {
@@ -13,13 +13,13 @@ int main(int argc, char **argv) {
 			cout << a[i] << " ";
 		}
 		cout << endl;
-	} while (next_permutation(a, a+size));*/
-	int a[] = {1,2,3,4,5,6};
+	} while (next_permutation(a, a+size));
+	//int a[] = {1,2,3,4,5,6};
 	int b[] = {0,0,0,0,1};
 	int c = 0;
 	do {
 		int sum = 0;
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 5; i++) {
 			if(b[i] == 1)
 				sum += a[i];
 		}

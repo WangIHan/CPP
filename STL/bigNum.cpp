@@ -9,7 +9,7 @@ class BigNum {
 	deque<int> v;
 public:
 	BigNum(){}
-	BigNum(String strNum) {
+	BigNum(string strNum) {
 		copy(strNum.begin(), strNum.end(), back_inserter(v));
 		transform(v.begin(), v.end(), v.begin(), bind2nd(minus<int> (), '0'));
 	}
@@ -22,7 +22,7 @@ public:
 	int size() {
 		return v.size();
 	}
-	back_insert_iterator<deque<int>>Back_Inserter() {
+	back_insert_iterator<deque<int> > Back_Inserter() {
 		return back_inserter(v);
 	}
 	void push_front(int n) {
@@ -57,7 +57,7 @@ public:
 		int n = size() - m.size();
 		if(n >= 0) {
 			transform(begin()+n, end(), m.begin(), result.Back_Inserter(), plus<int> ());
-			for(int i = n-1; i >= 0; i-) {
+			for(int i = n-1; i >= 0; i--) {
 				result.push_front(* (begin() + i));
 			}
 		}
@@ -67,7 +67,7 @@ public:
 				result.push_front(* (m.begin() + i));
 			}
 		}
-		result.adjus();
+		result.adjust();
 		return result;
 	}
 	BigNum Multiply(BigNum & m) {
